@@ -1,0 +1,35 @@
+﻿<Window x:Name="Window_2" x:Class="最前面画像ミギシタ.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:app="clr-namespace:最前面画像ミギシタ"
+        Title="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.Window2, Mode=OneWay}" Height="240" Width="426" Background="#02000000" BorderBrush="#00000000" Foreground="White" Topmost="True" WindowStartupLocation="Manual" FontFamily="Yu Gothic" FontSize="16" TextOptions.TextHintingMode="Fixed" TextOptions.TextRenderingMode="Aliased" WindowStyle="None" AllowsTransparency="True" MinWidth="213" MinHeight="120" ContentRendered="Window2_ContentRenderd" StateChanged="Window2_StateChanged" KeyUp="Window2_KeyUp">
+	<WindowChrome.WindowChrome>
+		<WindowChrome CaptionHeight="20" ResizeBorderThickness="5" />
+	</WindowChrome.WindowChrome>
+	<Grid x:Name="Grid1" MinWidth="213" MinHeight="120" Background="#19000000">
+		<Image x:Name="Image1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" MinWidth="213" MinHeight="120" OpacityMask="Black" >
+			<Image.ContextMenu>
+				<ContextMenu Name="cm">
+					<MenuItem Header="画像・位置を変える" Click="ReturnWindow1" IsCheckable="False"/>
+					<MenuItem Header="一時的に隠す" Click="Hide" IsCheckable="False"/>
+					<MenuItem x:Name="MenuItemFullscreen" Header="全画面にする" Click="ChangeToFullscreen" IsCheckable="False"/>
+					<MenuItem Header="初期位置に戻す" Click="GoBackPosition" IsCheckable="False"/>
+					<MenuItem x:Name="MenuItemDoNotSleep" Header="スリープ防止モード（ON／OFF）" Click="ChangeDoNotSleep" IsCheckable="True"/>
+					<MenuItem Header="終了する" Click="EndApp" IsCheckable="False"/>
+				</ContextMenu>
+			</Image.ContextMenu>
+		</Image>
+		<MediaElement x:Name="MediaElement1" HorizontalAlignment="Center"  Margin="0" VerticalAlignment="Center" MinWidth="213" MinHeight="120" OpacityMask="Black" Volume="1" UnloadedBehavior="Manual">
+			<MediaElement.ContextMenu>
+				<ContextMenu Name="cmm">
+					<MenuItem Header="画像・位置を変える" Click="ReturnWindow1" IsCheckable="False"/>
+					<MenuItem Header="0 dB" Click="MediaElement1_0dB" IsCheckable="False"/>
+					<MenuItem Header="－18 dB" Click="MediaElement1_18dB" IsCheckable="False"/>
+					<MenuItem Header="再生" Click="MediaElement1_Play" IsCheckable="False"/>
+					<MenuItem Header="停止" Click="MediaElement1_Stop" IsCheckable="False"/>
+					<MenuItem Header="終了する" Click="EndApp" IsCheckable="False"/>
+				</ContextMenu>
+			</MediaElement.ContextMenu>
+		</MediaElement>
+	</Grid>
+</Window>

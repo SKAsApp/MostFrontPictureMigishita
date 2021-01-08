@@ -1,0 +1,43 @@
+﻿<Window x:Name="Window1" x:Class="最前面画像ミギシタ.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:properties="clr-namespace:最前面画像ミギシタ.Properties"
+	xmlns:app="clr-namespace:最前面画像ミギシタ"
+        Title="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.Window1, Mode=OneWay}" Height="240" Width="426" WindowStartupLocation="CenterScreen" FontFamily="Yu Gothic" FontSize="16" TextOptions.TextHintingMode="Fixed" TextOptions.TextRenderingMode="Aliased" ContentRendered="Window1_ContentRenderd" ResizeMode="CanMinimize">
+	<Grid>
+		<Menu x:Name="Menu0" HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" FontFamily="Yu Gothic" FontSize="13" Width="426">
+			<MenuItem Cursor="Hand" Header="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.File, Mode=OneWay}">
+				<MenuItem Cursor="Hand" Header="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.Open, Mode=OneWay}" Click="ButtonInput_Click"/>
+				<MenuItem Cursor="Hand" Header="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.Run, Mode=OneWay}" Click="ButtonRun_Click"/>
+				<MenuItem Cursor="Hand" Header="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.Exit, Mode=OneWay}" Click="endApp1"/>
+			</MenuItem>
+			<MenuItem Cursor="Hand" Header="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.Edit, Mode=OneWay}">
+				<MenuItem Cursor="Hand" Command="ApplicationCommands.Copy" Header="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.Copy, Mode=OneWay}"/>
+				<MenuItem Cursor="Hand" Command="ApplicationCommands.Paste" Header="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.Paste, Mode=OneWay}"/>
+			</MenuItem>
+			<MenuItem Cursor="Hand" Header="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.Option, Mode=OneWay}">
+				<MenuItem Cursor="Hand" Header="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.Language, Mode=OneWay}">
+					<MenuItem Cursor="Hand" Header="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.日本語, Mode=OneWay}" Click="ChangeToJapanese"/>
+					<MenuItem Cursor="Hand" Header="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.English, Mode=OneWay}" Click="ChangeToEnglish"/>
+				</MenuItem>
+			</MenuItem>
+			<MenuItem Cursor="Hand" Header="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.Help, Mode=OneWay}">
+				<MenuItem Cursor="Hand" Header="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.Version, Mode=OneWay}" Click="ViewVersion"/>
+			</MenuItem>
+		</Menu>
+
+		<Label x:Name="LabelInput" Content="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.LabelInput, Mode=OneWay}" HorizontalAlignment="Left" Margin="20,38,0,0" VerticalAlignment="Top"/>
+		<Label x:Name="LabelPosition" Content="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.LabelPosition, Mode=OneWay}" HorizontalAlignment="Left" Margin="20,102,0,0" VerticalAlignment="Top"/>
+		<TextBox x:Name="TextBoxInput" HorizontalAlignment="Left" Height="36" Margin="125,38,0,0" VerticalAlignment="Top" Width="181" MaxLines="1"/>
+		<Button x:Name="ButtonInput" Content="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.ButtonInput, Mode=OneWay}" HorizontalAlignment="Left" Margin="315,38,0,0" VerticalAlignment="Top" Width="75" Cursor="Hand" Background="#FFDDDDDD" Click="ButtonInput_Click"/>
+		<ComboBox x:Name="ComboBoxPosition" HorizontalAlignment="Left" Margin="137,102,0,0" VerticalAlignment="Top" Width="120" Cursor="Hand" Background="#FFDDDDDD">
+			<ComboBoxItem Content="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.ComboBoxItem1, Mode=OneWay}" IsSelected="True" Cursor="Hand"/>
+			<ComboBoxItem Content="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.ComboBoxItem2, Mode=OneWay}" Cursor="Hand"/>
+			<ComboBoxItem Content="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.ComboBoxItem3, Mode=OneWay}" Cursor="Hand"/>
+			<ComboBoxItem Content="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.ComboBoxItem4, Mode=OneWay}" Cursor="Hand"/>
+			<ComboBoxItem Content="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.ComboBoxItem5, Mode=OneWay}" Cursor="Hand"/>
+		</ComboBox>
+		<Button x:Name="ButtonRun" Content="{Binding Source={x:Static app:ResourceService.Current}, Path=Resources.ButtonRun, Mode=OneWay}" HorizontalAlignment="Left" Margin="171,160,0,0" VerticalAlignment="Top" Width="75" Cursor="Hand" Background="#FFDDDDDD" Click="ButtonRun_Click"/>
+
+	</Grid>
+</Window>
